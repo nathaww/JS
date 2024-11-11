@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body style="padding: 50px 0px;">
+    <div id="container">
+      <div id="box1" class="box box1">
+        <button id="boxBtn">Box1</button>
+      </div>
+      <div id="box2" class="box box2">
+        <p>Box2</p>
+      </div>
+      <div id="box3" class="box box3">
+        <p>Box3</p>
+      </div>
+      <div id="box4" class="box box4">
+        <p>Box4</p>
+      </div>
+    </div>
+
+    <ul id="mainList">
+      <li>
+        Item 1
+        <ul>
+          <li>Item 1.1</li>
+          <li>
+            Item 1.2
+            <ul>
+              <li>Item 1.2.1</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Item 2</li>
+    </ul>
+
+    <div id="realDOM" style="background-color: black; height: 100px; color: white; display: flex; align-items: center;">
+        <p>original DOM</p>
+    </div>
+
+    <button id="cloneBtn">Clone DOM</button>
+
+    <script src="/index.js"></script>
+  </body>
+</html>
