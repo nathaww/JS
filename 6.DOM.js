@@ -45,28 +45,28 @@ document.getElementById("child").addEventListener("click", function (event) {
 // Additionally, write another function that listens for this custom event on the parent of this element and
 // logs a message only if the event bubbles to the parent (which should not happen).
 
-// const btn = document.getElementById("boxBtn");
-// const box1 = document.getElementById("boxBtn");
+const btn = document.getElementById("boxBtn");
+const box1 = document.getElementById("boxBtn");
 
-// btn.addEventListener("click", (e) => {
-//   e.stopPropagation();
-//   console.log("button clicked");
+btn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  console.log("button clicked");
 
-//   const customEvent = new CustomEvent("buttonClicked", {
-//     bubbles: false,
-//     detail: { message: "This is a custom event" },
-//   });
+  const customEvent = new CustomEvent("buttonClicked", {
+    bubbles: false,
+    detail: { message: "This is a custom event" },
+  });
 
-//   btn.dispatchEvent(customEvent);
-// });
+  btn.dispatchEvent(customEvent);
+});
 
-// box1.addEventListener("buttonClicked", (e) => {
-//   console.log("box clicked", e.detail.message);
-// });
+box1.addEventListener("buttonClicked", (e) => {
+  console.log("box clicked", e.detail.message);
+});
 
-// document.addEventListener("click", () => {
-//   console.log("Document clicked");
-// });
+document.addEventListener("click", () => {
+  console.log("Document clicked");
+});
 
 // Question 2: Write a function findAndModifyElementByClass(rootElement, targetClass, newText)
 // that searches a deeply nested DOM structure to find the first element
@@ -77,28 +77,28 @@ document.getElementById("child").addEventListener("click", function (event) {
 // - Change the inner text of the found element to newText.
 // - If no element is found with the target class, return "Element not found".
 
-// const findAndModifyElementByClass = (rootElement, targetClass, newText) => {
-//   if (rootElement && rootElement.classList.contains(targetClass)) {
-//     rootElement.innerText = newText;
+const findAndModifyElementByClass = (rootElement, targetClass, newText) => {
+  if (rootElement && rootElement.classList.contains(targetClass)) {
+    rootElement.innerText = newText;
 
-//     return rootElement;
-//   }
+    return rootElement;
+  }
 
-//   for (let child of rootElement) {
-//     const found = findAndModifyElementByClass(child, targetClass, newText);
-//     return found ? found : null;
-//   }
+  for (let child of rootElement) {
+    const found = findAndModifyElementByClass(child, targetClass, newText);
+    return found ? found : null;
+  }
 
-//   return null;
-// };
+  return null;
+};
 
-// const rootElement = document.querySelector(".container");
-// const result = findAndModifyElementByClass(rootElement, "box2", "New Text");
-// if (!result) {
-//   console.log("Element not found");
-// } else {
-//   console.log("Element modified:", result);
-// }
+const rootElement = document.querySelector(".container");
+const result = findAndModifyElementByClass(rootElement, "box2", "New Text");
+if (!result) {
+  console.log("Element not found");
+} else {
+  console.log("Element modified:", result);
+}
 
 // Question 3: You have a structure with multiple nested lists of items, such as:
 
@@ -125,22 +125,22 @@ document.getElementById("child").addEventListener("click", function (event) {
 // Use event delegation efficiently.
 // Log the correct path of clicked elements regardless of list depth.
 
-// const mainLIst = document.getElementById("mainList");
+const mainLIst = document.getElementById("mainList");
 
-// mainLIst.addEventListener("click", (e) => {
-//   if (e.target.matches("li")) {
-//     const path = [];
-//     let currentTarget = e.target;
-//     while (currentTarget && currentTarget != mainLIst) {
-//       path.unshift(currentTarget.textContent.trim());
-//       currentTarget = currentTarget.parentElement.closest("li");
-//     }
+mainLIst.addEventListener("click", (e) => {
+  if (e.target.matches("li")) {
+    const path = [];
+    let currentTarget = e.target;
+    while (currentTarget && currentTarget != mainLIst) {
+      path.unshift(currentTarget.textContent.trim());
+      currentTarget = currentTarget.parentElement.closest("li");
+    }
 
-//     path.unshift("main list");
+    path.unshift("main list");
 
-//     console.log(path.join(">"));
-//   }
-// });
+    console.log(path.join(">"));
+  }
+});
 
 // Question: Assume you have a dynamic application that frequently adds and removes DOM elements.
 // Every second, an element is created, an event listener is attached to it, and it’s appended to the DOM.

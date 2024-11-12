@@ -12,7 +12,7 @@ class Product {
   }
 
   calcTax(percent) {
-    console.log(`Taxed pricess : ${this.price + this.price * percent}`);
+    console.log(`Taxed price(s) : ${this.price + this.price * percent}`);
   }
 }
 
