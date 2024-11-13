@@ -15,12 +15,13 @@ console.log(window.location);
 // we can prevent the default behavior of an event by calling event.preventDefault()
 
 // event delegation
-// we can attach an event listener to a parent element and then check if the event target matches the selector we want
+// we can attach an event listener to a parent element and then check if the event target
+// matches the selector we want
 // this is more efficient than attaching an event listener to each child element
 // we can use event.target to get the element that triggered the event
 // we can use event.currentTarget to get the element that the event listener is attached to
 
-// event.target vs event.currentTarget
+event.target & event.currentTarget
 // event.target is the element that triggered the event
 // event.currentTarget is the element that the event listener is attached to
 
@@ -37,6 +38,28 @@ document.getElementById("child").addEventListener("click", function (event) {
   event.stopPropagation();
   event.preventDefault();
 });
+
+document.body.append()
+// Usage: Can accept multiple arguments, allowing you to append several nodes or text strings at once.
+// Content: Can append both DOM nodes and text directly.
+// Return Value: Returns undefined.
+// Example:
+
+document.body.append("Hello, ", "world!"); // Appends text directly
+document.body.append(document.createElement("div"), "Text"); // Appends a div and text at once
+// Benefits:
+// Simplifies appending both text and nodes.
+// Ideal for scenarios where you need to append multiple elements or text fragments.
+
+ document.body.appendChild()
+// Usage: Accepts only a single DOM node as an argument.
+// Content: Cannot append text directly. Only works with a single node.
+// Return Value: Returns the appended child node.
+// Example:
+
+const div = document.createElement("div");
+document.body.appendChild(div); // Appends the div element
+
 
 // Question 1: Write a JavaScript function that attaches a custom event to an element with a given ID.
 // The function should fire the custom event when the element is clicked, but it should not propagate
@@ -208,6 +231,35 @@ mainLIst.addEventListener("click", (e) => {
 // Use recursion carefully with cloneNode to manage depth.
 // Make sure to apply changes only to cloned nodes, not the original DOM structure.
 
+const cloneNodeWithDepth = (node, depth) => {
+  // Base case: if depth is 0, return without cloning
+  if (depth === 0) return;
+
+  // Clone the current node, including its children
+  const clone = node.cloneNode(true);
+
+  // Modify the cloned node's id to avoid conflicts, if it has one
+  if (clone.id) {
+      clone.id += "_clone";
+  }
+
+  // Change the text color of the cloned element
+  clone.style.color = "blue"; // Change color to differentiate
+
+  // Insert the clone after the original node
+  node.parentNode.insertBefore(clone, node.nextSibling);
+
+  // Recursively clone child nodes up to the specified depth
+  for (let i = 0; i < node.children.length; i++) {
+      // Limit recursion to the depth
+      cloneNodeWithDepth(node.children[i], depth - 1);
+  }
+};
+
+// Example usage:
+const rootNode = document.querySelector("#container");
+cloneNodeWithDepth(rootNode, 2); // Clones rootNode and up to 2 levels of children
+
 // const realDOM = document.getElementById("realDOM");
 // const cloneBtn = document.getElementById("cloneBtn");
 
@@ -315,11 +367,11 @@ mainLIst.addEventListener("click", (e) => {
 // Copy code
 // // Modifying src of an img element
 // const img = document.getElementById("myImage");
-// img.src = "new-image.jpg"; // or img.setAttribute("src", "new-image.jpg");
+img.src = "new-image.jpg"; // or img.setAttribute("src", "new-image.jpg");
 
 // // Modifying href of a link
 // const link = document.getElementById("myLink");
-// link.href = "https://new-url.com"; // or link.setAttribute("href", "https://new-url.com");
+link.href = "https://new-url.com"; // or link.setAttribute("href", "https://new-url.com");
 // 8. DOM Manipulation with Templates
 // Question: How do you use <template> in the DOM, and when is it useful?
 
@@ -327,7 +379,8 @@ mainLIst.addEventListener("click", (e) => {
 
 // Expected Answer:
 
-// The <template> tag is a mechanism for holding HTML content that is not rendered immediately. It’s useful for creating reusable fragments that can be added to the DOM at runtime.
+// The <template> tag is a mechanism for holding HTML content that is not rendered immediately. 
+// It’s useful for creating reusable fragments that can be added to the DOM at runtime.
 // Example:
 // html
 // Copy code
