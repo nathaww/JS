@@ -10,7 +10,7 @@
 // React projects often rely on external libraries. These can introduce security vulnerabilities
 // if not regularly updated or if the libraries themselves have flaws.
 // Mitigation: Regularly audit dependencies using tools like npm audit or GitHub Dependabot.
-// Keep libraries updated, and avoid using unmaintained or poorly rated packages.
+//  Keep libraries updated, and avoid using unmaintained or poorly rated packages.
 // Insecure APIs:
 
 // Many React apps rely on APIs for data fetching. If these APIs aren’t secured properly,
