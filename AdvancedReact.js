@@ -29,3 +29,8 @@
 // A pure function should receive specific input. 
 // That is a specific parameter will always return the exact same output. 
 // No matter how many times it gets invoked.
+
+
+// Stale Closure 
+// Premature abstraction 
+// Reconciliation  

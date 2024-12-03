@@ -26,3 +26,20 @@ set.clear(); // Set {}
 // size
 const size = set.size; // 0 (after clearing, it's now empty)
 
+
+// primitive
+// There are three major data types present in JavaScript.
+
+// Primitive
+// - Numbers
+// - Strings
+// - Boolean
+
+// Composite
+// - Objects
+// - Functions
+// - Arrays
+
+// Trivial
+// - Null
+// - Undefined
