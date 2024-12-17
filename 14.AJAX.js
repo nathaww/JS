@@ -17,55 +17,56 @@
 // method: HTTP method (e.g., "GET", "POST", "PUT", etc.).
 // URL: The endpoint to which the request is sent.
 // async (optional): Boolean indicating whether the request is asynchronous (default is true).
+
 // send(data):
+// - Sends the request to the server.
+// - Parameter: data is optional and used to send payload (e.g., for POST requests).
 
-// Sends the request to the server.
-// Parameter: data is optional and used to send payload (e.g., for POST requests).
 // setRequestHeader(header, value):
+// - Sets the HTTP headers for the request.
 
-// Sets the HTTP headers for the request.
 // abort():
+// - Cancels the current request.
 
-// Cancels the current request.
 // getResponseHeader(header):
+// - Returns the value of the specified response header.
 
-// Returns the value of the specified response header.
 // getAllResponseHeaders():
+// - Returns all the response headers as a string.
 
-// Returns all the response headers as a string.
+
 // Properties of AJAX (XMLHttpRequest):
-// readyState:
+// 1. readyState:
+  // Tracks the state of the request.
+  // Values:
+  // 0: UNSENT
+  // 1: OPENED
+  // 2: HEADERS_RECEIVED
+  // 3: LOADING
+  // 4: DONE
 
-// Tracks the state of the request.
-// Values:
-// 0: UNSENT
-// 1: OPENED
-// 2: HEADERS_RECEIVED
-// 3: LOADING
-// 4: DONE
-
-// status:
+// 2. status:
 // The HTTP status code of the response (e.g., 200 for success, 404 for not found).
 
-// statusText:
+// 3. statusText:
 // The status message corresponding to the status code (e.g., "OK" for 200).
 
-// responseText:
+// 4. responseText:
 // Contains the server response as a string.
 
-// responseXML:
+// 5. responseXML:
 // Contains the server response as XML (if applicable).
 
-// onreadystatechange:
+// 6. onreadystatechange:
 // An event handler triggered whenever the readyState changes.
 
-// timeout:
+// 7. timeout:
 // Specifies a timeout duration in milliseconds for the request.
 
-// responseType:
+// 8. responseType:
 // Specifies the type of response ("", "arraybuffer", "blob", "document", "json", "text").
 
-// response:
+// 9. response:
 // The response data, depending on responseType.
 
 let req = new XMLHttpRequest()
