@@ -31,18 +31,18 @@
 
 // Find all missing numbers
 
-let num = [1, 3, 4, 5, 6, 8];
+// let num = [1, 3, 4, 5, 6, 8];
 
-function missingNumbers(nums) {
-  let set = new Set(nums);
-  let result = [];
+// function missingNumbers(nums) {
+//   let set = new Set(nums);
+//   let result = [];
 
-  for (let i = Math.min(...nums); i < Math.max(...nums); i++) {
-    if (!set.has(i)) {
-      result.push(i);
-    }
-  }
-  return result
-}
+//   for (let i = Math.min(...nums); i < Math.max(...nums); i++) {
+//     if (!set.has(i)) {
+//       result.push(i);
+//     }
+//   }
+//   return result
+// }
 
-console.log(missingNumbers(num));
+// console.log(missingNumbers(num));
