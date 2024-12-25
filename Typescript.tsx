@@ -17,3 +17,23 @@ const newTuple = tuple.concat([2, "world", false]); // [1, "hello", true, 2, "wo
 
 // includes
 const hasHello = tuple.includes("hello"); // true
+
+// What is Typescript?
+
+// Components of Typescript (pretty much the same as first question)
+
+// Why should we use Typescript
+
+// Access Modifiers
+
+// What type did Typescript add to Javascript?
+
+// Difference between interface and type?
+
+// Generic types
+
+// Structural Typing
+// Private fields rules
+// Never vs unknown vs any 
+// Declare keyword
+// What are ambients?
