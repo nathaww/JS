@@ -1,4 +1,7 @@
 // What is a Closure?
+// - A function defined inside of another function, the inner function has access to the 
+//   variables and scope of the outer function. 
+
 // A closure is a function that:
 
 // Remembers its lexical environment, even when executed outside its original scope.
