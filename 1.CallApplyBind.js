@@ -42,7 +42,7 @@ const person3 = { name: "Charlie" };
 function introduce(age) {
   console.log(`I am ${this.name} and I am ${age} years old.`);
 }
-introduce.call(person, 30); // Output: "I am Charlie and I am 30 years old."
+introduce.call(person3, 30); // Output: "I am Charlie and I am 30 years old."
 
 // Using bind
 // Creates a permanently bound version of the function for future invocations.

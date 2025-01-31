@@ -21,7 +21,7 @@
 // or in other words a snapshot A component manages its own state internally
 // - States are managed within the component
 
-// Context API solution for props drilling 
+// Context API is a solution for props drilling 
 
 
 // Pure and Impure function 

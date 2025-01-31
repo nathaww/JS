@@ -183,34 +183,34 @@ mainLIst.addEventListener("click", (e) => {
 // Use concepts like WeakMap for tracking elements, and ensure removed elements don’t
 // leave behind dangling  references or event listeners.
 
-// const container = document.createElement("div");
-// document.body.appendChild(container);
+const container = document.createElement("div");
+document.body.appendChild(container);
 
-// const MAX_ELEMENTS = 5;
-// const element = [];
+const MAX_ELEMENTS = 5;
+const element = [];
 
-// const addRemoveElement = () => {
-//   const newElement = document.createElement("div");
-//   newElement.textContent = `New div ${element.length + 1}`;
+const addRemoveElement = () => {
+  const newElement = document.createElement("div");
+  newElement.textContent = `New div ${element.length + 1}`;
 
-//   const handleClick = () => {
-//     console.log("new element click", element);
-//   };
+  const handleClick = () => {
+    console.log("new element click", element);
+  };
 
-//   newElement.addEventListener("click", handleClick);
+  newElement.addEventListener("click", handleClick);
 
-//   container.appendChild(newElement);
-//   element.push({ element: newElement, handleClick });
+  container.appendChild(newElement);
+  element.push({ element: newElement, handleClick });
 
-//   if (element.length > MAX_ELEMENTS) {
-//     const oldest = element.shift();
+  if (element.length > MAX_ELEMENTS) {
+    const oldest = element.shift();
 
-//     oldest.element.removeEventListener("click", oldest.handleClick);
-//     container.removeChild(oldest.element);
-//   }
-// };
+    oldest.element.removeEventListener("click", oldest.handleClick);
+    container.removeChild(oldest.element);
+  }
+};
 
-// setInterval(addRemoveElement, 1000);
+setInterval(addRemoveElement, 1000);
 
 
 
