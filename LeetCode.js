@@ -89,22 +89,35 @@
 // console.log(TwoSumO(num, 26));
 
 ///////////////////  How many numbers a re smaller than the current number
-num = [8, 1, 2, 2, 3];
-function howMany(array) {
-  const length = array.length;
-  const ans = [];
+// num = [8, 1, 2, 2, 3];
+// function howMany(array) {
+//   const length = array.length;
+//   const ans = [];
 
-  for (let i = 0; i < length; i++) {
-    let count = 0;
-    for (let j = i + 1; i < length; j++) {
-      if (array[i] > array[j]) {
-        count++;
-      } else {
-        ans.push(count);
-      }
-    }
-  }
-  return ans;
+//   for (let i = 0; i < length; i++) {
+//     let count = 0;
+//     for (let j = i + 1; i < length; j++) {
+//       if (array[i] > array[j]) {
+//         count++;
+//       } else {
+//         ans.push(count);
+//       }
+//     }
+//   }
+//   return ans;
+// }
+
+// console.log(howMany(num));
+
+
+for(let i = 0; i < 10; i++){
+    setTimeout(() => {
+        console.log(i)
+    }, 1000)
 }
 
-console.log(howMany(num));
+for(var i = 0; i < 10; i++){
+    setTimeout(() => {
+        console.log(i)
+    }, 1000)
+}
