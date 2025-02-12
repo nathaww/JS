@@ -109,15 +109,21 @@
 
 // console.log(howMany(num));
 
+// for(let i = 0; i < 10; i++){
+//     setTimeout(() => {
+//         console.log(i)
+//     }, 1000)
+// }
 
-for(let i = 0; i < 10; i++){
-    setTimeout(() => {
-        console.log(i)
-    }, 1000)
-}
+// for(var i = 0; i < 10; i++){
+//     setTimeout(() => {
+//         console.log(i)
+//     }, 1000)
+// }
+// const text = "x n m"
+// const boldChars = Array.from({ length: text.length }, () => 0);
+// const arry = [];
+// arry.length = text.length;
+// arry.fill(0, 0, text.length)
 
-for(var i = 0; i < 10; i++){
-    setTimeout(() => {
-        console.log(i)
-    }, 1000)
-}
+// console.log(boldChars, arry)
