@@ -14,6 +14,54 @@ console.log(window.location);
 // we can stop the propagation of an event by calling event.stopPropagation()
 // we can prevent the default behavior of an event by calling event.preventDefault()
 
+const parent = document.getElementById("parent");
+const child = document.getElementById("child");
+
+// Event Bubbling (Default) - Event propagates from child to parent
+child.addEventListener("click", () => {
+  console.log("Child clicked - Bubbling phase");
+});
+
+parent.addEventListener("click", () => {
+  console.log("Parent clicked - Bubbling phase");
+});
+
+// Event Capturing - Event propagates from parent to child
+parent.addEventListener(
+  "click",
+  () => {
+    console.log("Parent clicked - Capturing phase");
+  },
+  true // Use `true` to enable capturing phase
+);
+
+child.addEventListener(
+  "click",
+  () => {
+    console.log("Child clicked - Capturing phase");
+  },
+  true
+);
+
+// Expected Output When Clicking the Child Button:
+
+// Capturing Phase (Top to Bottom)
+// "Parent clicked - Capturing phase"
+// "Child clicked - Capturing phase"
+
+// Target Phase (Event reaches the target)
+// "Child clicked - Bubbling phase"
+
+// Bubbling Phase (Bottom to Top)
+// "Parent clicked - Bubbling phase"
+
+// Capturing has a higher priority than bubbling, meaning that capturing event handlers 
+// are executed before bubbling event handlers, as shown by the phases of event propagation:
+
+// Capturing phase: The event moves down towards the target element
+// Target phase: The event reaches the target element
+// Bubbling phase: The event bubbles up from the target element
+
 // event delegation
 // we can attach an event listener to a parent element and then check if the event target
 // matches the selector we want
@@ -21,7 +69,7 @@ console.log(window.location);
 // we can use event.target to get the element that triggered the event
 // we can use event.currentTarget to get the element that the event listener is attached to
 
-event.target & event.currentTarget
+event.target & event.currentTarget;
 // event.target is the element that triggered the event
 // event.currentTarget is the element that the event listener is attached to
 
@@ -39,7 +87,7 @@ document.getElementById("child").addEventListener("click", function (event) {
   event.preventDefault();
 });
 
-document.body.append()
+document.body.append();
 // Usage: Can accept multiple arguments, allowing you to append several nodes or text strings at once.
 // Content: Can append both DOM nodes and text directly.
 // Return Value: Returns undefined.
@@ -51,7 +99,7 @@ document.body.append(document.createElement("div"), "Text"); // Appends a div an
 // Simplifies appending both text and nodes.
 // Ideal for scenarios where you need to append multiple elements or text fragments.
 
- document.body.appendChild()
+document.body.appendChild();
 // Usage: Accepts only a single DOM node as an argument.
 // Content: Cannot append text directly. Only works with a single node.
 // Return Value: Returns the appended child node.
@@ -59,7 +107,6 @@ document.body.append(document.createElement("div"), "Text"); // Appends a div an
 
 const div = document.createElement("div");
 document.body.appendChild(div); // Appends the div element
-
 
 // Question 1: Write a JavaScript function that attaches a custom event to an element with a given ID.
 // The function should fire the custom event when the element is clicked, but it should not propagate
@@ -212,8 +259,6 @@ const addRemoveElement = () => {
 
 setInterval(addRemoveElement, 1000);
 
-
-
 // Question: Write a function that takes a DOM node and a depth number,
 //  then recursively clones this node and all its child nodes up to the specified depth.
 
@@ -240,7 +285,7 @@ const cloneNodeWithDepth = (node, depth) => {
 
   // Modify the cloned node's id to avoid conflicts, if it has one
   if (clone.id) {
-      clone.id += "_clone";
+    clone.id += "_clone";
   }
 
   // Change the text color of the cloned element
@@ -251,8 +296,8 @@ const cloneNodeWithDepth = (node, depth) => {
 
   // Recursively clone child nodes up to the specified depth
   for (let i = 0; i < node.children.length; i++) {
-      // Limit recursion to the depth
-      cloneNodeWithDepth(node.children[i], depth - 1);
+    // Limit recursion to the depth
+    cloneNodeWithDepth(node.children[i], depth - 1);
   }
 };
 
@@ -379,7 +424,7 @@ link.href = "https://new-url.com"; // or link.setAttribute("href", "https://new-
 
 // Expected Answer:
 
-// The <template> tag is a mechanism for holding HTML content that is not rendered immediately. 
+// The <template> tag is a mechanism for holding HTML content that is not rendered immediately.
 // It’s useful for creating reusable fragments that can be added to the DOM at runtime.
 // Example:
 // html
